@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Desbravador Payment</string>
+    <string name="valor_do_pagamento">Valor do Pagamento</string>
+    <string name="valor_do_pagamento_value">R$ %1$s</string>
+    <string name="credito_vista">Crédito à vista</string>
+    <string name="credito_parcelado">Crédito parcelado</string>
+    <string name="credito_parcelado_emissor">Crédito parcelado emissor</string>
+    <string name="debito">Débito</string>
+    <string name="voucher">Voucher</string>
+    <string name="pix">PIX</string>
+    <string name="continuar">Continuar</string>
+    <string name="parcelas">Parcelas</string>
+    <string name="btnCancel">Cancelar</string>
+    <string name="aproxime_nfc">Aproxime o NFC</string>
+    <string name="initializing_nfc">Inicializando …</string>
+
+    <string name="scheme_return">deeplinktest</string>
+</resources>

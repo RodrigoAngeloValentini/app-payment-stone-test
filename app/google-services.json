@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "974267874852",
+    "project_id": "desbravador-app-payment",
+    "storage_bucket": "desbravador-app-payment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974267874852:android:dcf555caf79fc9cfe8a2b1",
+        "android_client_info": {
+          "package_name": "com.desbravador.payment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkB-laOfWNViFOPdzoA4rvslgcQNuYiqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

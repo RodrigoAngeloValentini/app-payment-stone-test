@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: '../positivo/positivo-signing-config.gradle'
+
+android {
+    namespace 'com.desbravador.payment'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.desbravador.payment"
+        minSdk 22
+        targetSdk 33
+        versionCode 2
+        versionName "1.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        config {
+            keyPassword 'Desbra@2508'
+            storeFile file('my-upload-key.keystore')
+            storePassword 'Desbra@2508'
+            keyAlias 'my-key-alias'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            jniDebuggable true
+            debuggable true
+            signingConfig signingConfigs.config
+        }
+
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.github.smart-fun:XmlToJson:1.5.1'
+    implementation 'com.google.zxing:core:3.3.3'
+    implementation('com.journeyapps:zxing-android-embedded:4.2.0') { transitive = false }
+
+    debugImplementation "com.github.tony19:logback-android:2.0.0"
+    debugImplementation "br.com.stone.sdk.android:debugmode:4.0.3"
+
+    implementation "br.com.stone:stone-sdk:$stone_sdk_version"
+    implementation "br.com.stone:stone-sdk-posandroid:$stone_sdk_version"
+    // implementation "br.com.stone:stone-sdk-posandroid-ingenico:$stone_sdk_version"
+    implementation "br.com.stone:stone-sdk-posandroid-positivo:$stone_sdk_version"
+    // implementation "br.com.stone:stone-sdk-posandroid-gertec:$stone_sdk_version"
+    // implementation "br.com.stone:stone-sdk-posandroid-sunmi:$stone_sdk_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
